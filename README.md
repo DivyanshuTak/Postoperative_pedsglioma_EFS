@@ -1,4 +1,4 @@
-# BRAF Subtype Mutation CLassification 
+# Deep-Learning based pediatric glioma post-operative risk prediction  
 > This repository contains the implementation of the longitudinal pediatric glioma EFS pipeline from paper [[link here](https://www.medrxiv.org/content/10.1101/2024.06.04.24308434v1.full-text)]  .
 
 ![Banner or Screenshot](fig.png)
