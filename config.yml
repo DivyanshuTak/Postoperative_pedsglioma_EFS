@@ -1,0 +1,36 @@
+model:
+  backbone: "resnet50" 
+  max_epochs: 2000
+  freeze: False
+  classifier : "two_way"
+
+data:
+  dataset: "image_only"
+  size: [96,128,96]
+  batch_size: 16
+  num_workers: 8
+  csv_file: "/csvs/tl_train.csv"
+  val_csv: "/csvs/tl_val.csv" 
+  root_dir: "/processed_datadir"
+  collate: 12
+
+optim:
+  lr: 0.000001
+  momentum: 0.9
+  weight_decay: 0.00005
+  clr: "no"
+
+logger:
+  save_dir: "/checkpoints"
+  save_name: "TemporalLearning_train_best-model-{epoch:02d}-{f1:.2f}"
+  run_name: "TemporalLearning_train"
+  project_name: "TemporalLearning"
+gpu:
+  visible_device: "3" 
+infer:
+  checkpoints: "/checkpoints/bestmodel"
+train: 
+  freeze: "no"
+  finetune: "no"
+  weights: "/checkpoints/TL_model"
+
